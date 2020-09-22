@@ -1,4 +1,5 @@
 $font: 'Varela';
+$transition: 0.4s all ease-in-out;
 
 @font-face {
   font-family: 'Varela';
@@ -56,50 +57,71 @@ form {
     border: none;
     background: white;
     color: rgba(255, 0, 0, 0.7);
-    transition: 0.3s all ease;
+    transition: $transition;
     cursor: pointer;
     &:hover {
       background: rgba(255, 230, 2, 0.7);
+      outline: none;
+    }
+    &:focus {
       outline: none;
     }
   }
 }
 
 .todos {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 15%;
+  width: 25%;
   margin: auto;
   list-style: none;
-  li {
-    flex: 1;
-    background: white;
-    font-size: 1.4rem;
-    padding: 1rem 1rem;
-    font-weight: bold;
-  }
-  .icon-wrapper {
-    background: white;
-    i {
-      &:nth-of-type(1) {
-        color: rgb(0, 151, 63);
-        padding: 0.9rem 1rem;
-        transition: 0.3s all ease;
-        &:hover {
-          background: rgb(0, 151, 63);
-          color: white;
-        }
+  .todo-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+    transition: 1s all ease;
+    li {
+      flex-grow: 1;
+      background: white;
+      font-size: 1.4rem;
+      padding: 1rem 1rem;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+    button {
+      padding: 0.6rem 1rem;
+      border: none;
+      background: white;
+      cursor: pointer;
+      outline: none;
+      i {
+        pointer-events: none;
       }
-      &:nth-of-type(2) {
-        color: rgb(192, 27, 27);
-        padding: 0.9rem 1rem;
-        transition: 0.3s all ease;
-        &:hover {
-          background: rgb(192, 27, 27);
-          color: white;
-        }
+    }
+    .checked {
+      color: rgb(0, 151, 63);
+      transition: $transition;
+      &:hover {
+        background: rgb(0, 151, 63);
+        color: white;
+      }
+    }
+    .deleted {
+      color: rgb(192, 27, 27);
+      transition: $transition;
+
+      &:hover {
+        background: rgb(192, 27, 27);
+        color: white;
       }
     }
   }
+}
+
+.line {
+  text-decoration: line-through;
+}
+
+.fade {
+  transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
 }

@@ -57,8 +57,8 @@ form button {
   border: none;
   background: white;
   color: rgba(255, 0, 0, 0.7);
-  -webkit-transition: 0.3s all ease;
-  transition: 0.3s all ease;
+  -webkit-transition: 0.4s all ease-in-out;
+  transition: 0.4s all ease-in-out;
   cursor: pointer;
 }
 
@@ -67,7 +67,17 @@ form button:hover {
   outline: none;
 }
 
+form button:focus {
+  outline: none;
+}
+
 .todos {
+  width: 25%;
+  margin: auto;
+  list-style: none;
+}
+
+.todos .todo-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -77,46 +87,63 @@ form button:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 15%;
-  margin: auto;
-  list-style: none;
+  margin: 1rem 0;
+  -webkit-transition: 1s all ease;
+  transition: 1s all ease;
 }
 
-.todos li {
+.todos .todo-wrapper li {
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   background: white;
   font-size: 1.4rem;
   padding: 1rem 1rem;
   font-weight: bold;
+  text-transform: capitalize;
 }
 
-.todos .icon-wrapper {
+.todos .todo-wrapper button {
+  padding: 0.6rem 1rem;
+  border: none;
   background: white;
+  cursor: pointer;
+  outline: none;
 }
 
-.todos .icon-wrapper i:nth-of-type(1) {
+.todos .todo-wrapper button i {
+  pointer-events: none;
+}
+
+.todos .todo-wrapper .checked {
   color: #00973f;
-  padding: 0.9rem 1rem;
-  -webkit-transition: 0.3s all ease;
-  transition: 0.3s all ease;
+  -webkit-transition: 0.4s all ease-in-out;
+  transition: 0.4s all ease-in-out;
 }
 
-.todos .icon-wrapper i:nth-of-type(1):hover {
+.todos .todo-wrapper .checked:hover {
   background: #00973f;
   color: white;
 }
 
-.todos .icon-wrapper i:nth-of-type(2) {
+.todos .todo-wrapper .deleted {
   color: #c01b1b;
-  padding: 0.9rem 1rem;
-  -webkit-transition: 0.3s all ease;
-  transition: 0.3s all ease;
+  -webkit-transition: 0.4s all ease-in-out;
+  transition: 0.4s all ease-in-out;
 }
 
-.todos .icon-wrapper i:nth-of-type(2):hover {
+.todos .todo-wrapper .deleted:hover {
   background: #c01b1b;
   color: white;
+}
+
+.line {
+  text-decoration: line-through;
+}
+
+.fade {
+  -webkit-transform: translateY(8rem) rotateZ(20deg);
+          transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
 }
 /*# sourceMappingURL=style.css.map */
