@@ -38,7 +38,6 @@ const addTodo = (e) => {
 
 const deleteCheckTodo = (e) => {
   const item = e.target;
-  console.log(item.classList);
   if (item.classList[0] === 'deleted') {
     const todoWrapper = item.parentElement;
     todoWrapper.classList.add('fade');
