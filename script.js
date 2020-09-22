@@ -9,6 +9,7 @@ const addTodo = (e) => {
   e.preventDefault();
 
   if (todoInput.value.trim() !== '') {
+    console.log(todoList);
     const todoWrapper = document.createElement('div');
     todoWrapper.classList.add('todo-wrapper');
 
@@ -20,8 +21,14 @@ const addTodo = (e) => {
     completedBtn.classList.add('checked');
     const deleteBtn = document.createElement('button');
     deleteBtn.classList.add('deleted');
-    completedBtn.innerHTML = ` <i class="fas fa-check fa-2x"></i>`;
-    deleteBtn.innerHTML = ` <i class="fas fa-trash fa-2x"></i>`;
+    completedBtn.insertAdjacentHTML(
+      'beforeend',
+      `<i class="fas fa-check fa-2x"></i>`
+    );
+    deleteBtn.insertAdjacentHTML(
+      'beforeend',
+      `<i class="fas fa-trash fa-2x"></i>`
+    );
 
     todoWrapper.appendChild(completedBtn);
     todoWrapper.appendChild(deleteBtn);
