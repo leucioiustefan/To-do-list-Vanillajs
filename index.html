@@ -15,7 +15,9 @@
       media="screen and (max-width: 1025px)"
       href="./mobile.css"
     />
-    <script src="./script.js" defer></script>
+    <script src="./Scripts/app.js" defer></script>
+    <script src="./Scripts/errorMsg.js" defer></script>
+    <script src="./Scripts/filter.js" defer></script>
     <title>Leucioiu Stefan || To Do List</title>
   </head>
   <body>
@@ -25,6 +27,13 @@
     <form>
       <input type="text" placeholder="Enter a to do" maxlength="20" />
       <button type="submit"><i class="fas fa-plus-circle fa-2x"></i></button>
+      <div class="select">
+        <select name="todos" id="filter-todo">
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="uncompleted">Uncompleted</option>
+        </select>
+      </div>
     </form>
     <div class="render-todos">
       <ul class="todos"></ul>

@@ -9,7 +9,6 @@ const addTodo = (e) => {
   e.preventDefault();
 
   if (todoInput.value.trim() !== '') {
-    console.log(todoList);
     const todoWrapper = document.createElement('div');
     todoWrapper.classList.add('todo-wrapper');
 
@@ -45,8 +44,8 @@ const addTodo = (e) => {
 
 const deleteCheckTodo = (e) => {
   const item = e.target;
+  const todoWrapper = item.parentElement;
   if (item.classList[0] === 'deleted') {
-    const todoWrapper = item.parentElement;
     todoWrapper.classList.add('fade');
     todoWrapper.addEventListener('transitionend', () => {
       todoWrapper.remove();
@@ -54,6 +53,7 @@ const deleteCheckTodo = (e) => {
   } else if (item.classList[0] === 'checked') {
     const todo = item.previousElementSibling;
     todo.classList.toggle('line');
+    todoWrapper.classList.toggle('completed');
   }
 };
 
